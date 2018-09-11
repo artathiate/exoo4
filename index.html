@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css"/>
+</head>
+<title>exercice 4 SLIDER</title>
+<style>
+    body{
+        background-image: url('photo2.jpg');
+        
+        max-width: 700px;
+        position: absolute;
+        left: 25%;
+        top: 15%;
+        
+    }
+</style>
+<script>
+       var i = 0;
+       var image = [] ;
+       var time = 3000;
+
+       //LISTE D'IMAGE
+
+       image[0] = 'photo.jpg';
+       image[1] = 'rama.JPG';
+       image[2] = 'arta.JPG';
+       image[3] = 'IMG_1484.JPG';
+       image[4] ='IMG_1362.JPG';
+
+       //FONCTION POUR CHANGER LES IMAGES
+
+       function changeimage(){
+           document.slide.src = image[i];
+
+           if( i < image.length -1 ){
+               i++;
+           }
+           else{
+               i = 0;
+           }
+           
+           setTimeout('changeimage()', time)
+
+       }
+       window.onload = changeimage;
+    </script>
+<body>
+    
+         <img width="100%" height="100%" name="slide">
+         
+
+
+</body>
+</html> 
